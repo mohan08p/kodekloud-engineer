@@ -10,8 +10,8 @@
 
 3. Change the port to 8089 in httpd config file at location `/etc/httpd/conf/httpd.conf` as shown below,
 
-    Change this to Listen on specific IP addresses as shown below to
-    # prevent Apache from glomming onto all bound IP addresses.
+    #Change this to Listen on specific IP addresses as shown below to
+    #prevent Apache from glomming onto all bound IP addresses.
     #
     #Listen 12.34.56.78:80
     Listen 8089
