@@ -9,7 +9,7 @@
 
 3. Create NFS Share, You can also share your existing directory with NFS.
 
-    mkdir /webapp #if already present then ignore this step
+    mkdir /webpap #if already present then ignore this step
 
     chmod 777 /webapp/
 

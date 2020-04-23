@@ -48,9 +48,10 @@
     index.html                                                      100%   35    62.1KB/s   00:00
     thor@jump_host /$
 
-9. Then copy this index.html file at Apache's root directory. The defualt root directory is `/usr/share/httpd/noindex/`, 
+9. Then copy this index.html file at Apache's root directory. The defualt root directory is `/var/www/html`, 
 
-    cp /home/clint/index.html /usr/share/httpd/noindex/
+    #cp /home/clint/index.html /usr/share/httpd/noindex/
+    cp /home/clint/index.html /var/www/html/
 
 10. Then reload apache configuration and check if you able to get the response from Apache's port, like below,
 
