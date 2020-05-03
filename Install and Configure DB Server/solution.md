@@ -73,10 +73,10 @@ Add MariaDB Yum Repository, vi /etc/yum.repos.d/MariaDB.repo, add below content,
     define( 'DB_NAME', 'kodekloud_db2' );
 
     /** MySQL database username */
-    define( 'DB_USER', 'root' );
+    define( 'DB_USER', 'kodekloud_cap' );
 
     /** MySQL database password */
-    define( 'DB_PASSWORD', 'conti@123' );
+    define( 'DB_PASSWORD', 'password' );
 
     /** MySQL hostname */
     define( 'DB_HOST', '172.16.239.10' );
@@ -84,8 +84,3 @@ Add MariaDB Yum Repository, vi /etc/yum.repos.d/MariaDB.repo, add below content,
 12. Finally, verify that if you able to view the frontend on port 80 of Host 1. The page is not properly visible as css are not getting loaded with this application. If you see KodeKloud blog you can consider the database is configured correctly. And, in case if you see database connection error which means something is not correct while congfiguring the database.
 
 Hope this helps. Thanks.
-
-    
-
-
-
