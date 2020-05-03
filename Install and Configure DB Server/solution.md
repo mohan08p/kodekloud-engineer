@@ -4,25 +4,29 @@
 
 Add MariaDB Yum Repository, vi /etc/yum.repos.d/MariaDB.repo, add below content,
 
+    sudo tee /etc/yum.repos.d/MariaDB.repo<<EOF 
     [mariadb]
     name = MariaDB
-    baseurl = http://yum.mariadb.org/10.1/centos7-amd64
+    baseurl = http://yum.mariadb.org/10.4/centos7-amd64
     gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
     gpgcheck=1
+    EOF
 
-2. Install MariaDB in CentOS 7
+2. Update yum cache index,
 
-    yum install MariaDB-server MariaDB-client -y
+    sudo yum makecache fast
 
-3. As soon as the installation of MariaDB packages completes, start the database server daemon for the time being, and also enable it to start automatically at the next boot like so:
+3. Install MariaDB in CentOS 7,
 
-    systemctl start mariadb
-    systemctl enable mariadb
-    systemctl status mariadb
+    sudo yum -y install MariaDB-server MariaDB-client
 
-4. Now its time to secure your MariaDB by setting root password, disabling remote root login, removing the test database as well as anonymous users and finally reload privileges as shown in the screen shot below:
+4. Start and enable mariadb service,
 
-Secure MariaDB in CentOS 7
+    sudo systemctl enable --now mariadb
+
+5. Now its time to secure your MariaDB by setting root password, disabling remote root login, removing the test database as well as anonymous users and finally reload privileges as shown in the screen shot below:
+
+   Secure MariaDB in CentOS 7
 
     mysql_secure_installation
 
@@ -39,7 +43,7 @@ Secure MariaDB in CentOS 7
 
 7. Create a user kodekloud_cap and set any password you like and grant full permissions to user kodekloud_cap on database kodekloud_db2.
 
-    CREATE USER 'kodekloud_cap'@'localhost' IDENTIFIED BY 'conti@123';
+    CREATE USER 'kodekloud_cap'@localhost IDENTIFIED BY 'password';
     GRANT ALL PRIVILEGES ON kodekloud_db2.* TO 'kodekloud_cap'@'localhost';
 
    Verify that user got the necessary permissions,
@@ -77,7 +81,9 @@ Secure MariaDB in CentOS 7
     /** MySQL hostname */
     define( 'DB_HOST', '172.16.239.10' );
 
-12. Finally, verify that if you able to view the frontend on port 80 of Host 1. 
+12. Finally, verify that if you able to view the frontend on port 80 of Host 1. The page is not properly visible as css are not getting loaded with this application. If you see KodeKloud blog you can consider the database is configured correctly. And, in case if you see database connection error which means something is not correct while congfiguring the database.
+
+Hope this helps. Thanks.
 
     
 
