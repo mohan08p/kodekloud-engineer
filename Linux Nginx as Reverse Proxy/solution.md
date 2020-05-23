@@ -43,7 +43,7 @@ Change the port to 8089 in httpd config file at location `/etc/httpd/conf/httpd.
 
 Copy index.html file from jump host to backup server using scp command,
 
-    thor@jump_host /$ scp home/index.html clint@172.16.238.16:~/
+    thor@jump_host /$ scp /home/index.html clint@172.16.238.16:~/
     clint@172.16.238.16's password:
     index.html                                                      100%   35    62.1KB/s   00:00
     thor@jump_host /$
