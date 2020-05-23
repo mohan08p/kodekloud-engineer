@@ -28,6 +28,7 @@ Next, install Nginx HTTP server from the EPEL repository using the YUM package m
     yum -y install nginx
 
 Change the port to 8095 in Nginx config file at location `/etc/nginx/nginx.conf` as shown below,
+*NOTE: Either you change the document root to /var/www/html/ or copy index.html to this location i.e. /usr/share/nginx/html*
 
     server {
     listen       8095 default_server;
