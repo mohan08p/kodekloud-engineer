@@ -1,7 +1,5 @@
 #### Configure protected directories in Apache	
 
-*NOTE: This lab I did not pass as something wrong I am doing in here. The final step is not validated.*
-
 First, check if apache service is running or not, start if it's not running(as validate the port number on which service is running),
 
     service httpd status
