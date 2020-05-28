@@ -23,7 +23,7 @@ Now validate the docker image is created using the command,
 
 Then, run a container out of this docker image using,
 
-   docker container run -d -p 6300:6300 mohan08p/apache
+    docker container run -d -p 6300:6300 mohan08p/apache
 
 Finally, test that your application is running as expected on the given port,
 
