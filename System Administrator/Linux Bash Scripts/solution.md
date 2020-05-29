@@ -1,8 +1,8 @@
-Configure ssh password less authetication for backup server from App server 1. Add tony user in sudoers group so that it will have any permission issue while running a script. Then run the below shell script, put this script under /scripts directory,
+Configure ssh password less authetication for backup server from App server 1 with tony user. Add tony user in sudoers group so that it will have necessary permission to run a script. Then run the below shell script, put this script under /scripts directory,
 
     official_backup.sh
 
-    cd /var/www/html/official
+    cd /var/www/html/
     zip -r xfusioncorp_official.zip official
     cp xfusioncorp_official.zip /backup/
     cd /backup/
