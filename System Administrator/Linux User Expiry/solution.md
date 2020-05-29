@@ -1,10 +1,10 @@
 ### Linux User Expiry
 
-1. SSH to app server 2 and create a user, kareem
+SSH to app server 2 and create a user, kareem
 
     root@stapp02 steve]# useradd -e 2021-03-28 kareem
 
-2. Next, verify the age of account and password with `chage` command for user ‘aparna‘ after setting account expiry date.
+Next, verify the age of account and password with `chage` command for user ‘kareem‘ after setting account expiry date.
 
     [root@stapp02 steve]# chage -l kareem
     Last password change                                    : May 04, 2020
