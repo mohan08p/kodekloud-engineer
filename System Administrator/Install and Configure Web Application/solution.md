@@ -36,7 +36,7 @@ Then go to directory `/etc/httpd/conf.d` and configure both sites as give below,
         DocumentRoot /var/www/html/blog/
         ErrorLog /var/log/httpd/blog/error.log
         CustomLog /var/log/httpd/blog/access.log combined
-    </VirtualHost>```
+    </VirtualHost>
 
    **news.conf**
 
