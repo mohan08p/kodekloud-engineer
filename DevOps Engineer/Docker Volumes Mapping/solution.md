@@ -16,6 +16,8 @@ Check as the container is in runnign state or not using the below command,
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     fce34114322b        ubuntu              "/bin/bash"         7 seconds ago       Up 5 seconds                            media
 
+Also, we can verify that the volumes are created and sample file is able see inside the container at the respective path, as shown below,
+
 ![Check the file inside Docker volume](/images/DockerVolume.JPG)
 
 Thank you.
