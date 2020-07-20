@@ -1,0 +1,21 @@
+---
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: create an archieve on respective servers
+      archive:
+        path: /usr/src/data/
+        dest: /opt/data/games.tar.gz
+        format: gz
+
+    - name: assign users and groups permissions respectively
+      file:
+        path: /opt/data/games.tar.gz
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: 0755
+
