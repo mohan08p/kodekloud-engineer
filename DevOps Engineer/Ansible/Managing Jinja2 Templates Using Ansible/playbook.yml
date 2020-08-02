@@ -1,5 +1,5 @@
 ---- 
-hosts: all
+hosts: stapp01 # Only running on app server1
 become: yes
 become_user: root
 roles:

@@ -4,7 +4,7 @@ Change directory to ansible home,
 
     cd ~/ansible
 
-First we need to update the main playbook file `playbook.yml` to run the httpd role, make sure to add hosts to all or specific app server one hostname.
+First we need to update the main playbook file `playbook.yml` to run the httpd role, make sure to add hosts to `stapp01` as we are targeting on specific app server i.e. app server1.
 
     vi playbook.yml
 
