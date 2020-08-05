@@ -36,4 +36,4 @@
     yum install wget -y
     ```
 
-Verify that wget is isntalled by downloaing any web url or web page.
+Verify that wget is installed by downloaing any web url or web page.
