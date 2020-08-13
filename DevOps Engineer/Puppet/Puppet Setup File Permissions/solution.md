@@ -8,7 +8,7 @@ On Jump host change a directy to `/etc/puppetlabs/code/environments/production/m
 vi news.pp
 ```
 
-# Check the `news.pp` file content in the same directry
+Check the `news.pp` file content in the same directry
 
 Then apply configuration on the App server3 
 
@@ -39,7 +39,10 @@ Notice: Applied catalog in 0.43 seconds
 
 Finally verify the file content along with it's permissions respectively.
 
+```
 root@stapp03 sysops]# cat beta.txt
 Welcome to xFusionCorp Industries![root@stapp03 sysops]#
+```
 
 Thank you.
+
