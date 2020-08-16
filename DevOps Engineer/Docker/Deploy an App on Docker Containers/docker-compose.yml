@@ -1,0 +1,25 @@
+version: "3"
+services:
+  web:
+    image: php:7.3-apache-stretch
+    container_name: php_apache
+    ports:
+      - "8083:80"
+    depends_on:
+      - db
+    volumes:
+      - /var/www/html:/var/www/html
+  db:
+    image: mariadb:latest
+    container_name: mysql_apache
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: tIgErMySQL01
+      MYSQL_DATABASE: database_apache
+      MYSQL_USER: mohan
+      MYSQL_PASSWORD: tIgErMySQL01
+
