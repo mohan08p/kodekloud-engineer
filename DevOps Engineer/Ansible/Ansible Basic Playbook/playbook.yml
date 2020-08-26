@@ -9,7 +9,7 @@
     - name: create an empty file on app server3
       file:
         path: /tmp/file.txt
-	state: touch
+        state: touch
         group: "{{ ansible_user }}"
         owner: "{{ ansible_user }}"
         mode: '0644'
