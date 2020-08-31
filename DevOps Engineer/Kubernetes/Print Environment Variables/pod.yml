@@ -11,7 +11,7 @@ spec:
     env:
     - name: GREETING
       value: "Welcome to"
-	- name: COMPANY
+    - name: COMPANY
       value: "Nautilus"
-	- name: GROUP
+    - name: GROUP
       value: "Ltd"

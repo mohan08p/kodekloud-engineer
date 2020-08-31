@@ -1,0 +1,30 @@
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: create a file facts.txt on all app servers
+      blockinfile:
+        block: |
+          Ansible managed node IP is {{ ansible_default_ipv4.address }}
+        path: /root/facts.txt
+        create: yes
+          
+    - name: install httpd(apache) packages 
+      yum:
+        name: httpd
+        state: present
+      
+    - name: copy template for html page
+      copy:
+        src: /root/facts.txt
+        dest: /var/www/html/index.html
+        remote_src: yes
+        mode: '0755'
+
+    - name: ensure httpd is running
+      service:
+        name: httpd 
+        state: started
