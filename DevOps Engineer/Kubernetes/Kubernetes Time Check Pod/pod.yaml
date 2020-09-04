@@ -10,7 +10,7 @@ spec:
   containers:
   - name: time-check
     image: busybox:latest
-    reosurces: {}
+    resources: {}
     envFrom:
       - configMapRef:
           name: time-config
