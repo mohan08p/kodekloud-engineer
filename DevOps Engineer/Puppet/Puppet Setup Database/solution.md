@@ -23,9 +23,9 @@ puppet parser validate demo.pp
 4. SSH to DB server and run it with noop and without noop,
 
 ```
-puppet apply official.pp --noop
+puppet apply demo.pp --noop
 
-puppet apply official.pp
+puppet apply demo.pp
 ```
 
 5. Finally, validate by getting a mysql shell, 
