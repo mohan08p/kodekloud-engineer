@@ -13,7 +13,7 @@ cd /etc/puppetlabs/code/environments/production/manifests
 
 vi official.pp
 ```
-# For reference code, check file `official.pp` in the same directory
+#### For reference code, check file `official.pp` in the same directory
 
 Then, validate the code file using a command,
 
