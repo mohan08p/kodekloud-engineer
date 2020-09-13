@@ -54,3 +54,5 @@ nginx-service   NodePort    10.97.71.52   <none>        80:30011/TCP   13s
 7. Finally, check the application on port 30011 by clicking on view port on Host 1, and add port 30011 and click submit, you will see nginx default page as below,
 
 ![Default Nginx Page](/images/WelcomeNginx.JPG)
+
+Thank you.
