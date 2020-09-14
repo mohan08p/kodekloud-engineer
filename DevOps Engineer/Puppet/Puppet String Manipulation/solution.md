@@ -58,9 +58,11 @@ Notice: Applied catalog in 0.10 seconds
 
 6. Now validate the content of the file `cluster.txt`, 
 
+```
 [root@stapp02 steve]# cat /opt/itadmin/cluster.txt
 This is  Nautilus sample file, created using Puppet!
 Welcome to xFusionCorp Industries!
 Please do not modify this file manually!
+```
 
 Thank you.
