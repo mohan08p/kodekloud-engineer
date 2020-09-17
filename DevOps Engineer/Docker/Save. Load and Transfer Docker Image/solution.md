@@ -1,8 +1,8 @@
 #### Save. Load and Transfer Docker Image
 
-We have to archieve the docker image created on one server and copy it to another server and load the same docker imageon it. Here, Docker `save` and `load` commands will be useful. The same will be applicable in real use case where there is no active internet connectivity and you want to run docker applications.
+We have to archieve the docker image created on one server and copy it to another server and load the same docker image on it. Here, Docker `save` and `load` commands will be useful. The same will be applicable in real use case where there is no active internet connectivity and you want to run docker applications.
 
-SSH to App server 1 abd use the `docker save` command to image to a tar archive using the following command,
+SSH to App server 1 and use the `docker save` command to image to a tar archive using the following command,
 
     docker save demo:xfusion > demo.tar
 
@@ -27,6 +27,8 @@ Then SSH to App server 3 and check if demo.tar file is there or not using `ls -l
     05f3b67ed530: Loading layer [==================================================>]  3.072kB/3.072kB
     f31a96b3e18c: Loading layer [==================================================>]  22.26MB/22.26MB
     Loaded image: demo:xfusion
+    
+NOTE: If you get the following error, *Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?* then start a docker daemon service on the host using *service docker start*
 
 Finally verify that the docker image ls there using ls command,
 
