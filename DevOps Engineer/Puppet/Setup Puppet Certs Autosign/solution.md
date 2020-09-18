@@ -36,7 +36,7 @@ fe00::0 ip6-localnet
 ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
-172.16.238.3    jump_host.stratos.xfusioncorp.com dns_alt_names
+172.16.238.3    jump_host.stratos.xfusioncorp.com puppet
 172.16.239.5    stapp01.stratos.xfusioncorp.com stapp01
 172.16.238.10   stapp01.stratos.xfusioncorp.com stapp01
 
