@@ -1,0 +1,40 @@
+#### Ansible Lineinfile Module
+
+---
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Install httpd packages
+      yum:
+        name: httpd
+        state: installed
+
+    - name: Ensure httpd is running
+      service:
+        name: httpd
+        state: started
+        enabled: true
+    
+    - name: Create empty file and add contents
+      copy:
+        dest: "/var/www/html/index.html"
+        content: |
+          This is a Nautilus sample file, created using Ansible!
+
+    - name: Adding a line to index.html file
+      lineinfile:
+        path: /var/www/html/index.html
+        line: 'Welcome to Nautilus Group!'
+        insertbefore: BOF
+
+    - name: Changing file owner and group permissions
+      file:
+        path: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0777'
+
