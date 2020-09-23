@@ -54,7 +54,7 @@ stapp02                    : ok=6    changed=5    unreachable=0    failed=0    s
 stapp03                    : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-6. Now SSH to App any app sever node and change directory to `/var/www/html`,
+6. Now SSH to any app sever node and change directory to `/var/www/html`,
 
 ```
 [root@stapp01 tony]# cd /var/www/html/
