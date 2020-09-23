@@ -1,0 +1,8 @@
+#### Deploy Jenkins on Kubernetes
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins

@@ -1,0 +1,14 @@
+#### Deploy Jenkins on Kubernetes
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-service
+  namespace: jenkins
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      nodePort: 30008
+  selector:
+    app: jenkins
