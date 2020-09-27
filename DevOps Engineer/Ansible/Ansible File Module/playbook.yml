@@ -1,0 +1,21 @@
+#### Ansible File Module
+
+---
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Create empty file and add contents
+      file:
+        path: /usr/src/app.txt
+        state: touch
+
+    - name: Changing file owner and group permissions
+      file:
+        path: /usr/src/app.txt
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: 0777

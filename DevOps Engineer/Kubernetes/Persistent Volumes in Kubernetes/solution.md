@@ -23,13 +23,13 @@ persistentvolumeclaim/pvc-nautilus created
 
 4. Now create pod config,
 
-``
+```
 thor@jump_host ~$ vi pod.yml
 ```
 
 5. Create pod usign the kubectl which will monut a volume we created above,
 
-``
+```
 thor@jump_host ~$ kubectl create -f pod.yml
 pod/pod-nautilus created
 ```
