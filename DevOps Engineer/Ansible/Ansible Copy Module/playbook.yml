@@ -1,0 +1,13 @@
+#### Ansible Copy Module
+---
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Copy a file to app server      
+      copy:
+        src: /usr/src/data/index.html
+        dest: /opt/data

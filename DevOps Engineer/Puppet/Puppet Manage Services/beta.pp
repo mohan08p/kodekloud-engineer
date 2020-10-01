@@ -4,11 +4,11 @@ node 'stapp01.stratos.xfusioncorp.com', 'stapp02.stratos.xfusioncorp.com', 'stap
 
 class vsftpd_package {
     package { 'vsftpd':
-        ensure => installed,
+    	ensure => installed,
     }
     service { 'vsftpd':
         ensure => running,
-		require => Package['vsftpd'],
+	require => Package['vsftpd'],
         enable => true,
     }
 }
