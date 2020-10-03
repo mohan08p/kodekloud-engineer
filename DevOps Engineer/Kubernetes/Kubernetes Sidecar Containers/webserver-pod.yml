@@ -17,7 +17,8 @@ spec:
       name: shared-logs
   - name: sidecar-container
     image: ubuntu:latest
-    command: ['sh', '-c', 'while true; do (cat /var/log/nginx/access.log) && (/var/log/nginx/error.log); sleep 30; done']
+    command: ["/bin/sh"]
+    args: ["-c","while true; do cat /var/log/nginx/access.log /var/log/nginx/error.log; sleep 30; done"]
     volumeMounts:
     - mountPath: /var/log/nginx
       name: shared-logs
