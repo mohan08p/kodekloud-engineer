@@ -6,10 +6,10 @@
 cd /etc/puppetlabs/code/environments/production/manifests
 ```
 
-2. Create a puppet programming file `beta.pp` and write the connfiguration,
+2. Create a puppet programming file `cluster.pp` and write the connfiguration,
 
 ```
-vi beta.pp
+vi cluster.pp
 #### Refer same directory for config file 
 ```
 
