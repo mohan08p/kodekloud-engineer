@@ -1,0 +1,34 @@
+---
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Install httpd packages
+      yum:
+        name: httpd
+        state: installed
+
+    - name: Ensure httpd is running
+      service:
+        name: httpd
+        state: started
+        enabled: true
+    
+    - name: Create index.html file along with a block of text
+      blockinfile:
+        dest: "/var/www/html/index.html"
+        create: yes
+        block: |
+          Welcome to XfusionCorp!
+          This is Nautilus sample file, created using Ansible!
+          Please do not modify this file manually!
+
+    - name: Changing file owner and group permissions
+      file:
+        path: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0755'
