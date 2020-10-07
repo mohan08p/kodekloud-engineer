@@ -16,7 +16,7 @@ vi cluster.pp
 3. Use validate the check if there is any issue with the above script, blank, means everything is fine.
 
 ```
-root@jump_host /etc/puppetlabs/code/environments/production/manifests# puppet parser validate beta.pp
+root@jump_host /etc/puppetlabs/code/environments/production/manifests# puppet parser validate cluster.pp
 root@jump_host /etc/puppetlabs/code/environments/production/manifests#
 ```
 

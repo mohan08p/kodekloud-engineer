@@ -1,0 +1,15 @@
+---
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: unarchieve the zip on app server
+      unarchive:
+        src: /usr/src/security/datacenter.zip
+        dest: /opt/security/
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: '0755'
