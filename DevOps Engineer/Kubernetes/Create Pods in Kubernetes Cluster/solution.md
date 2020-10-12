@@ -24,7 +24,7 @@ thor@jump_host ~$ vi nginx-pod.yaml
 4. Now, create a pod usign `kubectl create` utility,
 
 ```
-hor@jump_host ~$ k create -f pod.yaml
+hor@jump_host ~$ k create -f nginx-pod.yaml
 pod/pod-nginx created
 ```
 
@@ -47,11 +47,10 @@ pod-nginx   1/1     Running   0          68s
 6. Also, validate `container-name` using kubectl describe command,
 
 ```
-...
-...
-...
 thor@jump_host ~$ k describe pod pod-nginx
-	
+...
+...
+...	
 Containers:
   nginx-container:
     Container ID:   docker://1127f15ddc74ef2898f69f6ff1d29dbbf09435dee0e9e64fa41280bfacd8ee9a
