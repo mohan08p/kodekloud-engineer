@@ -76,11 +76,11 @@ REVISION  CHANGE-CAUSE
 2         <none>
 ```
 
-9. Once , all pods are in running state, rollback the deployment to the previous version, i.e. `2.4.25` by using deployment edit,
+9. Once , all pods are in running state, rollback the deployment to the previous version, i.e. `2.4.25` by using rollout undo,
 
 ```
-thor@jump_host ~$ kubectl edit deployment httpd-deploy -n xfusion
-deployment.apps/httpd-deploy edited
+thor@jump_host ~$ kubectl rollout undo deployment httpd-deploy -n nautilus
+deployment.apps/httpd-deploy rollback
 ```
 
 10. Now, check the pods and deployments status respecticely.
