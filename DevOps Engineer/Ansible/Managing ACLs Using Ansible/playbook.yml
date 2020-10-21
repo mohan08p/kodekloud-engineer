@@ -1,0 +1,39 @@
+---
+- name: Deploy playbook
+  hosts: all
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  vars:
+    params:
+      stapp01:
+        filename: blog
+        entity: tony
+        etype: group
+        permissions: r
+      stapp02:
+        filename: story
+        entity: steve
+        etype: user
+        permissions: rw
+      stapp03:
+        filename: media
+        entity: banner
+        etype: group
+        permissions: rw
+  tasks:
+    - name: create empty file
+      file:
+        path: "/opt/security/{{ params[ansible_hostname]['filename'] }}.txt"
+        state: touch
+        modification_time: preserve
+        access_time: preserve
+
+    - name: set acl rules
+      acl:
+        path: "/opt/security/{{ params[ansible_hostname]['filename'] }}.txt"
+        entity: "{{ params[ansible_hostname]['entity'] }}"
+        etype: "{{ params[ansible_hostname]['etype'] }}"
+        permissions: "{{ params[ansible_hostname]['permissions'] }}"
+        state: present
+
