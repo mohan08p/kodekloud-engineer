@@ -6,7 +6,7 @@
 [root@ststor01 natasha]# cd /usr/src/kodekloudrepos/apps/
 ```
 
-2. Check the `git stauts`,
+2. Check the `git status`,
 
 ```
 [root@ststor01 apps]# git status
