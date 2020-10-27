@@ -62,7 +62,7 @@ Welcome to xFusionCorp Industries!
 exit
 ```
 
-7. Once you exit out of a container, now get ashell into `volume-container-xfusion-2` and check if you can see the blog.txt file is present or not!
+7. Once you exit out of a container, now get a shell into `volume-container-xfusion-2` and check if you can see the blog.txt file is present or not!
 
 ```
 thor@jump_host ~$ k exec -it volume-share-xfusion -c volume-container-xfusion-2 /bin/bash
