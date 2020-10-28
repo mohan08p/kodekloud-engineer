@@ -47,7 +47,8 @@ nginx-replicationcontroller-8hc2m   1/1     Running   0          22s
 nginx-replicationcontroller-cz27k   1/1     Running   0          22s
 nginx-replicationcontroller-lcq7d   1/1     Running   0          22s
 
-thor@jump_host ~$ k get pods --show-labelsNAME                                READY   STATUS    RESTARTS   AGE   LABELS
+thor@jump_host ~$ k get pods --show-labels
+NAME                                READY   STATUS    RESTARTS   AGE   LABELS
 nginx-replicationcontroller-8hc2m   1/1     Running   0          35s   app=nginx_app,type=front-end
 nginx-replicationcontroller-cz27k   1/1     Running   0          35s   app=nginx_app,type=front-end
 nginx-replicationcontroller-lcq7d   1/1     Running   0          35s   app=nginx_app,type=front-end
