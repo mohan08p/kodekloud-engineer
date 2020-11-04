@@ -40,12 +40,13 @@ status:
 ```
   
 3. Check the node IP address,
-  
+
+```  
 thor@jump_host ~$ k get nodes -o wide
 NAME           STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION       CONTAINER-RUNTIME
 controlplane   Ready    master   12m   v1.16.4   172.17.0.8    <none>        Ubuntu 18.04.4 LTS   4.15.0-109-generic   docker://19.3.6
-node01         Ready    <none>   11m   v1.16.0   172.17.0.9    <none>        Ubuntu 18.04.4 LTS   4.15.0-109-generic   
-docker://19.3.6t
+node01         Ready    <none>   11m   v1.16.0   172.17.0.9    <none>        Ubuntu 18.04.4 LTS   4.15.0-109-generic   docker://19.3.6
+```
 
 4. We can check the application on port 30008 from browser or using curl,
 

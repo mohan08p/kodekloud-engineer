@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: python
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+  redis:
+    image: redis
+    container_name: redis
