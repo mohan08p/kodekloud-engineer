@@ -1,0 +1,47 @@
+---
+- name: Deploy playbook
+  hosts: stapp01
+  become: true  
+  tasks:
+    - name: Install httpd and php package
+      yum:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - httpd
+        - php
+
+    - name: check the myroot is present or not
+      stat:
+        path: /var/www/html/myroot
+      register: is_myroot
+
+    - name: create a root dir myroot
+      file:
+        path: /var/www/html/myroot
+        state: directory
+        mode: 0755
+        group: apache
+        owner: apache
+      when: is_myroot.stat.exists == false
+
+    - name: change default document root in apache config
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: '^(.*)DocumentRoot (.*)$'
+        line: 'DocumentRoot /var/www/html/myroot'
+    
+    - name: copy the php template to target node
+      template:
+        src: /home/thor/playbooks/templates/phpinfo.php.j2
+        dest: /var/www/html/myroot/phpinfo.php
+        owner: apache
+        group: apache
+        mode: '0755'
+
+    - name: ensure httpd is running
+      service:
+        name: httpd 
+        state: started
+        enabled: true
+

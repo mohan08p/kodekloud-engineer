@@ -6,7 +6,15 @@
 thor@jump_host ~$ alias k='kubectl'
 ```
 
-2. Check the nginx service we can see the port is not default http port, hence change the port and targetPOrt to 80. We can see the config after updating port,
+2. Check the labels on pods, we can tag `app=nginx-fpm` is attached,
+
+```
+thor@jump_host /$ k get pods --show-labels
+NAME                               READY   STATUS    RESTARTS   AGE     LABELS
+nginx-phpfpm-dp-778fb84448-kvhh4   2/2     Running   0          7m30s   app=nginx-fpm,pod-template-hash=778fb84448,tier=frontend
+```
+
+3. Check the nginx service we can see the port is not default http port, hence change the port and targetPOrt to 80. Also, check tag used in there. We can see the config after updating port and tag,
 
 ```
 thor@jump_host ~$ k get svc nginx-service -o yaml
@@ -39,7 +47,7 @@ status:
   loadBalancer: {}
 ```
   
-3. Check the node IP address,
+4. Check the node IP address,
 
 ```  
 thor@jump_host ~$ k get nodes -o wide
@@ -48,7 +56,7 @@ controlplane   Ready    master   12m   v1.16.4   172.17.0.8    <none>        Ubu
 node01         Ready    <none>   11m   v1.16.0   172.17.0.9    <none>        Ubuntu 18.04.4 LTS   4.15.0-109-generic   docker://19.3.6
 ```
 
-4. We can check the application on port 30008 from browser or using curl,
+5. We can check the application on port 30008 from browser or using curl,
 
 ```
 thor@jump_host ~$ curl 172.17.0.9:30008
