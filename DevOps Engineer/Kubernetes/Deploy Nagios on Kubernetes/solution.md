@@ -17,7 +17,7 @@ thor@jump_host ~$ alias k='kubectl'
 ```
 thor@jump_host ~$ vi nagios-app.yaml
 ```
-
+*Note: Refer same directory for config*
 
 
 4. Create a deployment and service respectively,
