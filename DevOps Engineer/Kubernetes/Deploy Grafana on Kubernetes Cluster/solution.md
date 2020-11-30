@@ -1,7 +1,5 @@
 #### Deploy Grafana on Kubernetes Cluster
 
-#### Deploy Nginx and Phpfpm on Kubernetes
-
 1. Change directory to `/home/thor` on jump box,
 
 ```
@@ -38,6 +36,7 @@ service/grafana-service-datacenter created
 
 6. Check the status of pod, deployment,
 
+```
 thor@jump_host ~$ k get pods -n grafana-monitoring-datacenter
 NAME                                           READY   STATUS    RESTARTS   AGE
 grafana-deployment-datacenter-6cb56464-5jhl7   1/1     Running   0          26s
@@ -47,6 +46,7 @@ grafana-deployment-datacenter   1/1     1            1           33s
 thor@jump_host ~$ k get svc -n grafana-monitoring-datacenter
 NAME                         TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 grafana-service-datacenter   NodePort   10.110.85.203   <none>        3000:32000/TCP   40s
+```
 
 7. Finally, login to grafana dashboard using default credentials, admin/admin,
 
