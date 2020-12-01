@@ -28,6 +28,7 @@ Install Docker on a linux system(CentOS),
 
 5. Check the docker version,
 
+```
 [steve@stapp02 ~]$ sudo docker version
 Client: Docker Engine - Community
  Version:           19.03.13
@@ -56,6 +57,7 @@ Server: Docker Engine - Community
  docker-init:
   Version:          0.18.0
   GitCommit:        fec3683
+```
 
 6. Check the docker service status,
 
