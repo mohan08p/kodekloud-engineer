@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment-datacenter
+  namespace: haproxy-controller-datacenter
+  labels:
+    run: ingress-default-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: ingress-default-backend
+  template:
+    metadata:
+      labels:
+        run: ingress-default-backend
+    spec:
+      containers:
+      - name: backend-container-datacenter
+        image: gcr.io/google_containers/defaultbackend:1.0
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-backend-datacenter
+  namespace: haproxy-controller-datacenter
+  labels:
+    run: ingress-default-backend
+spec:
+  ports:
+  - name: port-backend
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  selector:
+    run: ingress-default-backend

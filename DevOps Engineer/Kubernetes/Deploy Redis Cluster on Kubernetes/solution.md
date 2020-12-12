@@ -33,6 +33,7 @@ persistentvolume/redis-pv-06 created
 
 5. Check PV status,
 
+```
 thor@jump_host ~$ k get pv
 NAME          CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
 redis-pv-01   1Gi        RWO            Retain           Available                                   10s
@@ -41,6 +42,7 @@ redis-pv-03   1Gi        RWO            Retain           Available              
 redis-pv-04   1Gi        RWO            Retain           Available                                   10s
 redis-pv-05   1Gi        RWO            Retain           Available                                   10s
 redis-pv-06   1Gi        RWO            Retain           Available                                   10s
+```
 
 6. Now, create a StatefulSet file named `sts.yaml`,
 
