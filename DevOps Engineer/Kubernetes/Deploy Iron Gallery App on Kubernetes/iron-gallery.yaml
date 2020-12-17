@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iron-gallery-deployment-xfusion
+  namespace: iron-namespace-xfusion
+  labels:
+    run: iron-gallery
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: iron-gallery
+  template:
+    metadata:
+      labels:
+        run: iron-gallery
+    spec:
+      containers:
+      - name: iron-gallery-container-xfusion
+        image: kodekloud/irongallery:2.0
+        resources:
+          limits:
+            cpu: "50m"
+            memory: "100Mi"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config
+          mountPath: /usr/share/nginx/html/data
+        - name: images
+          mountPath: /usr/share/nginx/html/uploads
+      volumes:
+      - name: config
+        emptyDir: {}
+      - name: images
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iron-gallery-service-xfusion
+  namespace: iron-namespace-xfusion
+spec:
+  type: NodePort
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 32678
+  selector:
+    run: iron-gallery
