@@ -1,0 +1,25 @@
+---
+- name: Deploy playbook
+  hosts: all
+  become: true
+  vars:
+    params:
+      stapp01:
+        filename: blog
+        str1: xFusionCorp
+        str2: Nautilus
+      stapp02:
+        filename: story
+        str1: Nautilus
+        str2: KodeKloud
+      stapp03:
+        filename: media
+        str1: KodeKloud
+        str2: xFusionCorp Industries
+  tasks:
+    - name: Replace a line in file
+      replace:
+        path: "/opt/security/{{ params[ansible_hostname]['filename'] }}.txt"
+        regexp: "{{ params[ansible_hostname]['str1'] }}"
+        replace: "{{ params[ansible_hostname]['str2']}}"
+
