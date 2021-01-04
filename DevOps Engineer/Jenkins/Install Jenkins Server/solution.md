@@ -55,3 +55,5 @@ root@jenkins:~# cat /var/lib/jenkins/secrets/initialAdminPassword
 8. Proceed and install suggested packages, respectively. And, finallly configure the username, password, full name and email as given in the problem statement, once it's done, you can see the dashboard as below,
 
 ![Jenkins Dashboard](/images/jenkinsDashboard.png)
+
+Thank you.
