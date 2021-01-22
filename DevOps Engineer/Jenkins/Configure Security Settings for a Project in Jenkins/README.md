@@ -1,0 +1,10 @@
+#### Configure Security Settings for a Project in Jenkins
+
+The xFusionCorp Industries has recruited some new developers. There are already some existing jobs on Jenkins and two of these new developers need some level of permissions to access those jobs. The development team has already shared those requirements with the DevOps team so as per details mentioned below grant required permissions to the developers.
+Click on the + button in the top left corner and select option Select port to view on Host 1, enter port 8081 and click on Display Port. You should be able to access the Jenkins login page. Login using username theadmin and Adm!n321 password.
+1. There is an existing Jenkins job named Packages; there are also two existing Jenkins users named sam with password sam@pass12345 and user rohan with password rohan@pass12345.
+2. Grant permissions to these users to access Packages job as per details mentioned below:a.) Make sure to select Inherit permissions from parent ACL under inheritance strategy for granting permissions to these users.b.) Grant mentioned permissions to sam user : build, configure and read.c.) Grant mentioned permissions to rohan user : build, cancel, configure, read, update and tag.
+Note:
+1. Please do not modify/alter any other existing job configuration. 
+2. You might need to install some plugins and restart Jenkins service. So, we recommend clicking on Restart Jenkins when installation is complete and no jobs are running on plugin installation/update page i.e update centre. Also Jenkins UI sometimes gets stuck when Jenkins service restarts in the back end. In this case, please make sure to refresh the UI page.
+3. For these kind of scenarios requiring changes to be done in a web UI, please take screenshots so that you can share it with us for review in case your task is marked incomplete. You may also consider using a screen recording software such as loom.com to record and share your work.
