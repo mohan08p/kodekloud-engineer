@@ -65,6 +65,6 @@ kubectl cp /opt/index.php nginx-phpfpm:/var/www/html -c nginx-container
 
 8. Now you can access the web application by using App button on the top bar,
 
-![Nginx-php App](/images/nginx-php-app.JPG)
+![Nginx-php App](/images/nginx-php-app.png)
 
 Thank you.
