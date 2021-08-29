@@ -9,8 +9,8 @@ data:
     }
     http {
       server {
-        listen 8096 default_server;
-        listen [::]:8096 default_server;
+        listen 8098 default_server;
+        listen [::]:8098 default_server;
         
         # Set nginx to serve files from the shared volume!
         root /var/www/html;
@@ -32,6 +32,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-phpfpm
+  labels:
+    app: nginx-phpfpm
 spec:
   volumes:
   - name: shared-files
@@ -41,7 +43,7 @@ spec:
       name: nginx-config
   
   containers:
-  - image: php:7.0-fpm
+  - image: php:7.1-fpm
     name: php-fpm-container
     volumeMounts:
       - name: shared-files
