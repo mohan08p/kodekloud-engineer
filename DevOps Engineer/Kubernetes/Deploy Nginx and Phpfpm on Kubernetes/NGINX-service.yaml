@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 8098
+      port: 80
+      nodePort: 30012
+  selector:
+    app: nginx-phpfpm
