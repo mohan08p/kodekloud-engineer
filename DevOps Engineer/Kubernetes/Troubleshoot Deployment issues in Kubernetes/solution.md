@@ -43,6 +43,8 @@ Events:
   Warning  FailedScheduling  85s (x2 over 86s)  default-scheduler  0/2 nodes are available: 2 node(s) didn't match node selector.
 ```
 
+**Note:** In the recent task the issue might be regarding the configmap as `mountVolume.SetUp failed for volume "config" : configmap "redis-cofig" not found` in that case check the `configmap name` is correct along with `redis image name` in the deployment file.
+
 3. We can see in `Node-Selectors` section master spell incorrect, now edit the deployment,
 
 ```
