@@ -1,48 +1,6 @@
 #### Creating Soft Links Using Ansible
 
-Write a `playbook.yml` as shown below,
-
-
-    ---
-    - name: Deploy playbook
-      hosts: all  
-      serial: 1
-      any_errors_fatal: true
-      gather_facts: true
-      become: true  
-      tasks:
-        - name: create an empty file on app server1
-          file:        
-            path: /opt/itadmin/blog.txt
-            state: touch
-            group: tony
-            owner: tony        
-            mode: '0644'
-          when: inventory_hostname == "stapp01"
-
-        - name: create an empty file on app server2      
-          file:
-            path: /opt/itadmin/story.txt
-            state: touch
-            group: steve        
-            owner: steve
-            mode: '0644'
-          when: inventory_hostname == "stapp02"
-
-        - name: create an empty file on app server3
-          file:
-            path: /opt/itadmin/media.txt
-            state: touch        
-            group: banner
-            owner: banner
-            mode: '0644'
-          when: inventory_hostname == "stapp03"
-
-        - name: create symbolic link on app server1
-          file:
-            src: /opt/itadmin
-            dest: /var/www/html
-            state: link
+Create a `playbook.yml` as created in the same directory,
 
 Execute it and validate as given here,
 
