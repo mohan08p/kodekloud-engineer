@@ -1,0 +1,40 @@
+---
+- name: Deploy playbook
+  hosts: all  
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true  
+  tasks:
+    - name: create an empty file on app server1
+      file:        
+        path: /opt/data/blog.txt
+        state: touch
+        group: "{{ ansible_user }}"
+        owner: "{{ ansible_user }}"        
+        mode: '0644'
+      when: inventory_hostname == "stapp01"
+
+    - name: create an empty file on app server2      
+      file:
+        path: /opt/data/story.txt
+        state: touch
+        group: "{{ ansible_user }}"        
+        owner: "{{ ansible_user }}"
+        mode: '0644'
+      when: inventory_hostname == "stapp02"
+
+    - name: create an empty file on app server3
+      file:
+        path: /opt/data/media.txt
+        state: touch        
+        group: "{{ ansible_user }}"
+        owner: "{{ ansible_user }}"
+        mode: '0644'
+      when: inventory_hostname == "stapp03"
+
+    - name: create symbolic link on app server {{ inventory_hostname }}
+      file:
+        src: /opt/data
+        dest: /var/www/html
+        state: link
