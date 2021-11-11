@@ -114,7 +114,8 @@ changed: [stapp03] => (item=jim)
 changed: [stapp03] => (item=mark)
 
 PLAY RECAP ***************************************************************************************************************
-stapp03                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 
+stapp03                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
 
 9. Now, we have created the users and group, once again check the all users on the app servers and you should see the newly created users and group by the above playbook.
 
