@@ -1,9 +1,40 @@
 ---
-- name: Deploy playbook
-  hosts: all
-  serial: 1
-  any_errors_fatal: true
-  gather_facts: true
-  become: true
+- name: ansible add users and groups playbook
+  hosts: stapp03 # dedicated host
+  become: yes
   tasks:
-    - name: 
+  - name: creating admin group 
+    group:
+     name:
+      admins
+     state: present
+
+  - name: creating developer group
+    group:
+     name:
+      developers
+     state: present
+
+  - name: creating users for the admins group
+    user:
+     name: "{{ item }}"
+     password: "{{ 'Rc5C9EyvbU' | password_hash ('sha512') }}"
+     groups: admins,wheel
+     state: present
+    loop:
+    - rob
+    - david
+    - joy
+
+  - name: creating users for the developers group
+    user:
+     name: "{{ item }}"
+     password: "{{ 'BruCStnMT5' | password_hash ('sha512') }}"
+     home: "/var/www/{{ item }}"
+     group: developers
+     state: present
+    loop:
+    - tim
+    - ray
+    - jim
+    - mark
