@@ -18,7 +18,9 @@ Install vim editor for editing config file,
 
     apt install vim
 
-Finally, change a port in `/etc/apache2/ports.conf` file and change it from 80 to 5004 respectively.
+Finally, change the port in `/etc/apache2/ports.conf` file from 80 to 5004 respectively and restart the apache2 service.
+
+    service apache2 status
 
 Then, check locally inside the container using curl call,
 
