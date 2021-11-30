@@ -2,26 +2,24 @@
 
 1. SCP an index.html file to storage server,
 
-```
-scp /tmp/index.html natasha@172.16.238.15:~/
-natasha@172.16.238.15's password:
-index.html                                                                                              100%   27    69.5KB/s   00:00
-thor@jump_host /$
-```
+ ```
+ scp /tmp/index.html natasha@172.16.238.15:~/
+ natasha@172.16.238.15's password:
+ index.html                                                                                              100%   27    69.5KB/s   00:00
+ thor@jump_host /$
+ ```
 
-2. SSH to storage server and change directory to location, `/usr/src/kodekloudrepos/blog`, 
+ 2. SSH to storage server and change directory to location, `/usr/src/kodekloudrepos/blog`, 
 
-```
-scp /tmp/index.html natasha@ststor01:/home/natasha/
-natasha@ststor01's password: 
-index.html                                                                                100%   27    76.4KB/s   00:00    
-```
+ ```
+ cd /usr/src/kodekloudrepos/blog
+ ```
 
-3. Secure copy an `index.html` file from jump host to storage server,
+ 3. Copy an index.html file in this directroy, 
 
-```
-cp /home/natasha/index.html .
-```
+ ```
+ cp /home/natasha/index.html .
+ ```
 
 4. Configure git config as below based on the version, you can read into warning description,
 
