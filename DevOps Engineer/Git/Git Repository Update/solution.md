@@ -12,10 +12,12 @@ thor@jump_host /$
 2. SSH to storage server and change directory to location, `/usr/src/kodekloudrepos/blog`, 
 
 ```
-cd /usr/src/kodekloudrepos/blog
+scp /tmp/index.html natasha@ststor01:/home/natasha/
+natasha@ststor01's password: 
+index.html                                                                                100%   27    76.4KB/s   00:00    
 ```
 
-3. Copy an index.html file in this directroy, 
+3. Secure copy an `index.html` file from jump host to storage server,
 
 ```
 cp /home/natasha/index.html .
