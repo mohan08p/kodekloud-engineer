@@ -78,6 +78,9 @@ Change mount path from /usr/share/nginx/html to /var/www/html
 thor@jump_host ~$ k delete pod nginx-phpfpm
 pod/nginx-phpfpm deleted
 
+thor@jumphost ~$ k create -f pod.yaml 
+pod/nginx-phpfpm created
+
 thor@jump_host ~$ k get pods
 NAME           READY   STATUS    RESTARTS   AGE
 nginx-phpfpm   2/2     Running   0          7s
