@@ -1,0 +1,15 @@
+---
+- name: Deploy playbook
+  hosts: all
+  serial: 1
+  any_errors_fatal: true
+  gather_facts: true
+  become: true
+  tasks:
+    - name: create an empty file on app server3
+      file:
+        path: /tmp/file.txt
+        state: touch
+        group: "{{ ansible_user }}"
+        owner: "{{ ansible_user }}"
+        mode: '0644'
